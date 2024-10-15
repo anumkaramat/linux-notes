@@ -1,0 +1,25 @@
+yum -y install httpd
+ystemctl status httpd
+ststemctl enable httpd
+firewall-cmd --list-all
+firewall-cmd --add-service=http --permanent 
+firewall-cmd --reload 
+getenforce 
+setenforce 0
+systemctl status httpd
+cd /var/www/html/
+vim file 
+firewall-cmd --list-all
+firewall-cmd --add-port=80/tcp --permanent 
+firewall-cmd --list-all
+firewall-cmd --add-port=80/udp --permanent 
+firewall-cmd --reload 
+firewall-cmd --list-all
+systemctl restart httpd
+systemctl status httpd
+
+
+Extra:
+chekc permission on file for others
+
+chmod 644 ks-107.cfg 
